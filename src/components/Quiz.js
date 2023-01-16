@@ -6,17 +6,16 @@ export default function (props) {
         props.answerList.map((answer, currentPos) =>
             <div
                 key={answer}
-                className={`answer result-answer ${currentPos === props.correctPos ? "correct-answer" : ""} ${currentPos === props.selectedPos && currentPos !== props.correctPos ? "wrong-answer" : ""}`}
-            >
+                className={`answer result-answer ${currentPos === props.correctPos ? "correct-answer" : ""} ${currentPos === props.selectedPos && currentPos !== props.correctPos ? "wrong-answer" : ""}`}>
                 {answer}
             </div>
-        ) : props.answerList.map((answer, currentPos) =>
+        ) : 
+        props.answerList.map((answer, currentPos) =>
             <div
                 key={answer}
                 className={`answer 
             ${currentPos === props.selectedPos ? "selected-answer" : ""}`}
-                onClick={() => props.handleAnswerSelection(currentPos, props.quizPos)}
-            >
+                onClick={() => props.handleAnswerSelection(currentPos, props.quizPos)}>
                 {answer}
             </div>
         )

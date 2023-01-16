@@ -13,9 +13,9 @@ export default function (props) {
 
     function handleAnswerSelection(selectedPos, index) {
         const newArray = selectedAnswers.slice()
-        newArray.splice(index, 1, selectedPos)
+        selectedAnswers[index] !== selectedPos ? newArray.splice(index, 1, selectedPos) : newArray.splice(index, 1, -1)
         setSelectedAnswers(newArray)
-    }
+    }   
 
 
     const quizElement = props.quizList.map((quizItem, index) => {
