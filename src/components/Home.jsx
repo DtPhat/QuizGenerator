@@ -27,14 +27,14 @@ export default function ({ setFormData }) {
         setQuizSettings(prevData => {
             return {
                 ...prevData,
-                trivia_amount: ((increment === 1 && prevData.trivia_amount === 50) || (increment === -1 && prevData.trivia_amount === 0)) ?
+                trivia_amount: ((increment === 1 && prevData.trivia_amount === 50) || (increment === -1 && prevData.trivia_amount === 1)) ?
                     prevData.trivia_amount : prevData.trivia_amount + increment
             }
         })
     }
     
     const formElement =
-        <form onSubmit={handleSubmit} className="fromData">
+        <form onSubmit={handleSubmit} className="from-data">
             <label>Number of Questions:</label>
             <div className="trivia_amount">
                 <div className="increment" onClick={() => handleChangeNumber(-1)}>-</div>
@@ -91,7 +91,7 @@ export default function ({ setFormData }) {
                 <option value="boolean">True / False</option>
             </select>
             <br />
-            <button className="home-button">Start quiz</button>
+            <button className="start-button">Start quiz</button>
         </form>
 
     return (
@@ -99,7 +99,7 @@ export default function ({ setFormData }) {
             <h1 className="home-title"><span>Quiz</span>Generator</h1>
             <p className="home-description">Test your trivia knowledge with questions from 25 categories</p>
             {formElement}
-            <a href="https://github.com/DtPhat/Quiz_Generator" target="_blank"><img src={process.env.PUBLIC_URL+ "/images/blue-creep.jpg"} alt="" className="info-avatar"></img></a>
+            <a href="" target="_blank"><img src={process.env.PUBLIC_URL+ "/images/blue-creep.jpg"} alt="" className="info-avatar"></img></a>
             <div className="decoration">
                 <img src={process.env.PUBLIC_URL + "/images/blob-blue.png"} alt="" className="blob-blue"></img>
                 <img src={process.env.PUBLIC_URL + "/images/blob-yellow.png"} alt="" className="blob-yellow"></img>

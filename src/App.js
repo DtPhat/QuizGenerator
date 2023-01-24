@@ -11,7 +11,7 @@ export default function App() {
             {formData !== null ?
                 <Main formData={formData} /> :
                 <Home setFormData={setFormData} />}
-            <h1 className="logo home-title" onClick={() => setFormData(null)}>
+            <h1 className="home-title logo" onClick={() => setFormData(null)}>
                 <span>Quiz</span>Generator
             </h1>
         </main >

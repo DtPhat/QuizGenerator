@@ -1,5 +1,5 @@
 import React from "react";
-import QuizData from "./QuizData"
+import QuizData from "./QuizListData"
 export default function (props) {
     const [quizAgain, setQuizAgain] = React.useState(false)
     const [quizzes, setQuizzies] = React.useState([]);

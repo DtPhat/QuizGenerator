@@ -1,5 +1,5 @@
 import React from "react";
-import Quiz from "./Quiz.js"
+import Quiz from "./Quiz.jsx"
 import { nanoid } from "nanoid"
 export default function (props) {
     const [correctAnswerCounter, setcorrectAnswerCounter] = React.useState(-1)
@@ -45,7 +45,7 @@ export default function (props) {
         setSelectedAnswers(genDefaultAnsersArr())
     }
     return (
-        <div className="quizList">
+        <div className="quiz-list">
             {quizElement}
             {correctAnswerCounter >= 0 ?
                 <div>
@@ -53,7 +53,7 @@ export default function (props) {
                     <button className="quizAgain-button" onClick={handleQuizData}>Play Again</button>
                 </div>
                 : <div>
-                    <button className="submit-button" onClick={handleSubmission}>Check answer</button>
+                    <button className="checkAnswer-button" onClick={handleSubmission}>Check answer</button>
                 </div>
             }
         </div>

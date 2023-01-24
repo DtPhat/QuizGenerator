@@ -33,7 +33,7 @@ body {
   font-size: 1em;
   position: absolute;
   top: 0;
-  left: 1%;
+  left: 1.5rem;
   cursor: pointer;
 }
 
@@ -47,7 +47,7 @@ body {
   text-align: center;
 }
 
-.fromData {
+.from-data {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,8 +105,8 @@ option:checked {
   background-color: #afdfba;
 }
 
-.home-button {
-  margin-top: 5%;
+.start-button {
+  margin: 2rem 1rem;
   width: 300px;
   height: 50px;
   font-size: 30px;
@@ -196,10 +196,9 @@ hr {
   align-items: center;
 }
 
-.quizList {
-  margin: 30px 100px;
-  margin-left: 150px;
-  margin-top: 80px;
+.quiz-list {
+  margin: 2rem 6rem;
+  margin-top: 5rem;
 }
 
 .question {
@@ -244,11 +243,11 @@ hr {
   border: none
 }
 
-.submit-button {
+.checkAnswer-button {
   width: 50%;
   padding: 10px 0px;
   font-size: 30px;
-  border-radius: 10px;
+  border-radius: 30px;
   color: black;
   font-weight: 600;
   border: solid 3px darkgreen;
@@ -266,10 +265,28 @@ hr {
   margin-left: 1%;
   font-size: 25px;
   padding: 5px 0px;
-  border-radius: 10px;
+  border-radius: 30px;
   color: black;
   font-weight: 600;
   border: solid 4px darkgreen;
   background-color: #00cc66;
   cursor: pointer;
+}
+
+@media screen and (max-width: 769px) {
+
+  .info-avatar, .decoration{
+    display:none
+  }
+  .home-title{
+    font-size: 1.7em;
+  }
+  .logo{
+    font-size: 0.7em;
+  }
+  .quiz-list{
+    margin: 2rem;
+    margin-top: 5rem;
+
+  }
 }
