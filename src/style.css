@@ -106,7 +106,7 @@ option:checked {
 }
 
 .start-button {
-  margin: 2rem 1rem;
+  margin: 1rem 1rem;
   width: 300px;
   height: 50px;
   font-size: 30px;
@@ -244,7 +244,7 @@ hr {
 }
 
 .checkAnswer-button {
-  width: 50%;
+  width: 40%;
   padding: 10px 0px;
   font-size: 30px;
   border-radius: 30px;
@@ -260,7 +260,7 @@ hr {
   font-weight: 600;
 }
 
-.quizAgain-button {
+.playAgain-button {
   width: 200px;
   margin-left: 1%;
   font-size: 25px;
@@ -268,7 +268,7 @@ hr {
   border-radius: 30px;
   color: black;
   font-weight: 600;
-  border: solid 4px darkgreen;
+  border: solid 3px darkgreen;
   background-color: #00cc66;
   cursor: pointer;
 }

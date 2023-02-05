@@ -1,7 +1,7 @@
 import React from "react";
 import Quiz from "./Quiz.jsx"
 import { nanoid } from "nanoid"
-export default function (props) {
+export default function QuizList(props) {
     const [correctAnswerCounter, setcorrectAnswerCounter] = React.useState(-1)
     const [selectedAnswers, setSelectedAnswers] = React.useState(genDefaultAnsersArr())
 
@@ -11,9 +11,9 @@ export default function (props) {
         return defaultAnswersArr
     }
 
-    function handleAnswerSelection(selectedPos, index) {
+    function handleAnswerSelection(selectedPos, answerIndex) {
         const newArray = selectedAnswers.slice()
-        selectedAnswers[index] !== selectedPos ? newArray.splice(index, 1, selectedPos) : newArray.splice(index, 1, -1)
+        selectedAnswers[answerIndex] !== selectedPos ? newArray.splice(answerIndex, 1, selectedPos) : newArray.splice(answerIndex, 1, -1)
         setSelectedAnswers(newArray)
     }   
 
@@ -23,10 +23,10 @@ export default function (props) {
             key={nanoid()}
             showResult={correctAnswerCounter >= 0}
             quizPos={index}
-            handleAnswerSelection={handleAnswerSelection}
             question={quizItem.question}
             answerList={quizItem.answerList}
             selectedPos={selectedAnswers[index]}
+            handleAnswerSelection={handleAnswerSelection}
             correctPos={quizItem.correctPos}
         />)
     })
@@ -50,7 +50,7 @@ export default function (props) {
             {correctAnswerCounter >= 0 ?
                 <div>
                     <span className="result-text">You scored {correctAnswerCounter} / {props.quizList.length} correct answer{correctAnswerCounter > 1 ? "s" : ""}. </span>
-                    <button className="quizAgain-button" onClick={handleQuizData}>Play Again</button>
+                    <button className="playAgain-button" onClick={handleQuizData}>Play Again</button>
                 </div>
                 : <div>
                     <button className="checkAnswer-button" onClick={handleSubmission}>Check answer</button>
