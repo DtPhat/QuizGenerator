@@ -1,6 +1,6 @@
 import React from "react";
-import QuizData from "./QuizListData"
-export default function (props) {
+import QuizListData from "./QuizListData"
+export default function Main(props) {
     const [quizAgain, setQuizAgain] = React.useState(false)
     const [quizzes, setQuizzies] = React.useState([]);
     const [loading, setLoading] = React.useState(true)
@@ -30,7 +30,7 @@ export default function (props) {
                 Type: ${formData.trivia_type ? formData.trivia_type : "any type"}`}
             >?</div>
 
-            <QuizData
+            <QuizListData
                 quizzes={quizzes}
                 setQuizAgain={setQuizAgain}
                 setLoading={setLoading}

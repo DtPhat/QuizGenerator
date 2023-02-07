@@ -42,6 +42,7 @@ body {
 }
 
 .home-description {
+  margin: 0 20px;
   margin-top: -20px;
   margin-bottom: 60px;
   text-align: center;
@@ -93,7 +94,7 @@ label {
   background-color: #afdfba;
 }
 
-select{
+select {
   background-color: transparent;
 }
 
@@ -138,21 +139,20 @@ option:checked {
 
 .info-avatar {
   position: absolute;
-  top: 10%;
+  top: 12%;
   left: 2%;
-  width: 8%;
-  border-radius: 30px;
-  cursor: pointer;
+  width: 6em;
+  border-radius: 25px;
 }
 
-.loading{
+.loading {
   margin-top: 100px;
   text-align: center;
   font-weight: 700;
-  font-size: 1.2em; 
+  font-size: 1.2em;
 }
 
-.quiz-info{
+.quiz-info {
   position: absolute;
   text-align: center;
   width: 33px;
@@ -168,7 +168,7 @@ option:checked {
 .quiz-info:before {
   white-space: pre-line;
   font-size: 20px;
-  content:attr(data-hover);
+  content: attr(data-hover);
   visibility: hidden;
   opacity: 0;
   padding: 10px;
@@ -176,7 +176,7 @@ option:checked {
   max-width: 500px;
   background-color: #00cc66;
   color: #fff;
-  text-align:center;
+  text-align: center;
   border-radius: 5px;
   transition: opacity 1s ease-in-out;
   position: absolute;
@@ -191,8 +191,7 @@ option:checked {
 }
 
 hr {
-  margin-top: 25px;
-  margin-bottom: 30px;
+  margin: 25px 0;
   align-items: center;
 }
 
@@ -253,7 +252,7 @@ hr {
   border: solid 3px darkgreen;
   background-color: #00cc66;
   cursor: pointer;
-  margin-left: 25%;
+  margin-left: 30%;
 }
 
 .result-text {
@@ -273,18 +272,27 @@ hr {
   cursor: pointer;
 }
 
+@media screen and (max-width: 1200px) {
+  .info-avatar{
+    display: none
+  }
+}
+
 @media screen and (max-width: 769px) {
 
-  .info-avatar, .decoration{
-    display:none
+  .decoration {
+    display: none
   }
-  .home-title{
+
+  .home-title {
     font-size: 1.7em;
   }
-  .logo{
+
+  .logo {
     font-size: 0.7em;
   }
-  .quiz-list{
+
+  .quiz-list {
     margin: 2rem;
     margin-top: 5rem;
 

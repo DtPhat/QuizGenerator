@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ({ setFormData }) {
+export default function Home({ setFormData }) {
 
     const [quizSettings, setQuizSettings] = React.useState({
         trivia_amount: 5,
@@ -97,9 +97,9 @@ export default function ({ setFormData }) {
     return (
         <div className="home">
             <h1 className="home-title"><span>Quiz</span>Generator</h1>
-            <p className="home-description">Test your trivia knowledge with questions from 25 categories</p>
+            <p className="home-description">Test your trivia knowledge with questions from up to 25 categories</p>
             {formElement}
-            <a href="" target="_blank"><img src={process.env.PUBLIC_URL+ "/images/blue-creep.jpg"} alt="" className="info-avatar"></img></a>
+            <img src={process.env.PUBLIC_URL+ "/images/blue-creep.jpg"} alt="" className="info-avatar"></img>
             <div className="decoration">
                 <img src={process.env.PUBLIC_URL + "/images/blob-blue.png"} alt="" className="blob-blue"></img>
                 <img src={process.env.PUBLIC_URL + "/images/blob-yellow.png"} alt="" className="blob-yellow"></img>

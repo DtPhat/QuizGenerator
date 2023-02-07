@@ -1,7 +1,7 @@
 import React from "react";
 import QuizList from "./QuizList"
 import he from "he"
-export default function (props) {                
+export default function QuizListData(props) {                
     const quizArray = []
     props.quizzes.forEach(quiz => {
         const radomPos = quiz.type === "multiple" ? Math.floor(Math.random() * (quiz.incorrect_answers.length + 1)) : Math.floor(Math.random() * 2)
