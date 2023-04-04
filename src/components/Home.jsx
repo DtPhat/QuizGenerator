@@ -1,50 +1,33 @@
-import React from "react";
-
+import React, { useReducer } from "react";
+import { formReducer, INITIAL_FORM_STATE, ActionKind } from "./formReducer";
 export default function Home({ setFormData }) {
-
-    const [quizSettings, setQuizSettings] = React.useState({
-        trivia_amount: 5,
-        trivia_category: "",
-        trivia_difficulty: "",
-        trivia_type: ""
-    })
+    const [state, dispatch] = useReducer(formReducer, INITIAL_FORM_STATE);
     function handleSubmit(event) {
         event.preventDefault()
-        setFormData(quizSettings)
+        setFormData(state)
     }
 
-    function handleChange(event) {
+    function handleTextChange(event) {
         const { name, value } = event.target
-        setQuizSettings(prevData => {
-            return {
-                ...prevData,
-                [name]: value === "any" ? "" : value
-            }
-        })
+        dispatch({ type: ActionKind.changeText, payload: { name: name, value: value } })
     }
 
-    function handleChangeNumber(increment) {
-        setQuizSettings(prevData => {
-            return {
-                ...prevData,
-                trivia_amount: ((increment === 1 && prevData.trivia_amount === 50) || (increment === -1 && prevData.trivia_amount === 1)) ?
-                    prevData.trivia_amount : prevData.trivia_amount + increment
-            }
-        })
+    function handleNumberChange(amount) {
+        dispatch({ type: ActionKind.changeAmount, payload: { increment: amount } })
     }
-    
+
     const formElement =
         <form onSubmit={handleSubmit} className="from-data">
             <label>Number of Questions:</label>
             <div className="trivia_amount">
-                <div className="increment" onClick={() => handleChangeNumber(-1)}>-</div>
-                <div>{quizSettings.trivia_amount}</div>
-                <div onClick={() => handleChangeNumber(1)} className="increment">+</div>
+                <div className="increment" onClick={() => handleNumberChange(-1)}>-</div>
+                <div>{state.trivia_amount}</div>
+                <div onClick={() => handleNumberChange(1)} className="increment">+</div>
             </div>
             <br />
 
             <label htmlFor="trivia_category">Select Category: </label>
-            <select onChange={handleChange} defaultValue={quizSettings.trivia_category} name="trivia_category" className="form-control" id="form-category">
+            <select onChange={handleTextChange} name="trivia_category" className="form-control" id="form-category">
                 <option value="any">Any Category</option>
                 <option value="9">General Knowledge</option>
                 <option value="10">Entertainment: Books</option>
@@ -75,7 +58,7 @@ export default function Home({ setFormData }) {
             <br />
 
             <label htmlFor="trivia_difficulty">Select Difficulty: </label>
-            <select onChange={handleChange} defaultValue={quizSettings.trivia_difficulty} name="trivia_difficulty" className="form-control">
+            <select onChange={handleTextChange} defaultValue={state.trivia_difficulty} name="trivia_difficulty" className="form-control">
                 <option value="any">Any Difficulty</option>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
@@ -85,7 +68,7 @@ export default function Home({ setFormData }) {
             <br />
 
             <label htmlFor="trivia_type">Select Type: </label>
-            <select onChange={handleChange} defaultValue={quizSettings.trivia_type} name="trivia_type" className="form-control">&gt;
+            <select onChange={handleTextChange} defaultValue={state.trivia_type} name="trivia_type" className="form-control">&gt;
                 <option value="any">Any Type</option>
                 <option value="multiple">Multiple Choice</option>
                 <option value="boolean">True / False</option>
@@ -99,7 +82,7 @@ export default function Home({ setFormData }) {
             <h1 className="home-title"><span>Quiz</span>Generator</h1>
             <p className="home-description">Test your trivia knowledge with questions from up to 25 categories</p>
             {formElement}
-            <img src={process.env.PUBLIC_URL+ "/images/blue-creep.jpg"} alt="" className="info-avatar"></img>
+            <img src={process.env.PUBLIC_URL + "/images/blue-creep.jpg"} alt="" className="info-avatar"></img>
             <div className="decoration">
                 <img src={process.env.PUBLIC_URL + "/images/blob-blue.png"} alt="" className="blob-blue"></img>
                 <img src={process.env.PUBLIC_URL + "/images/blob-yellow.png"} alt="" className="blob-yellow"></img>

@@ -5,10 +5,10 @@ import Main from "./components/Main"
 
 export default function App() {
     const [formData, setFormData] = React.useState(null)
-
+    const startQuiz = formData !== null
     return (
         <main>
-            {formData !== null ?
+            {startQuiz ?
                 <Main formData={formData} /> :
                 <Home setFormData={setFormData} />}
             <h1 className="home-title logo" onClick={() => setFormData(null)}>

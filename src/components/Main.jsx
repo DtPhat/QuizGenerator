@@ -19,7 +19,6 @@ export default function Main(props) {
 
     }, [quizAgain])
 
-
     return loading ?
         <div className="loading">Loading...</div> :
         <div>
