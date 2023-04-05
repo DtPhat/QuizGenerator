@@ -96,6 +96,7 @@ label {
 
 select {
   background-color: transparent;
+  cursor: pointer;
 }
 
 select:hover {
@@ -104,6 +105,14 @@ select:hover {
 
 option:checked {
   background-color: #afdfba;
+}
+
+button{
+  opacity: 80%;
+}
+
+button:hover{
+  opacity: 100%;
 }
 
 .start-button {
@@ -117,7 +126,7 @@ option:checked {
   border-radius: 40px;
   color: black;
   border: solid 3px darkgreen;
-  background-color: rgb(30, 172, 125);
+  background-color: #00cc66;
   cursor: pointer;
 }
 
@@ -197,7 +206,7 @@ hr {
 
 .quiz-list {
   margin: 2rem 6rem;
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 
 .question {
@@ -222,8 +231,12 @@ hr {
   cursor: pointer;
 }
 
+.answer:hover{
+  background-color: #e6f0e8;
+}
+
 .selected-answer {
-  background-color: #D6DBF5
+  background-color: #afdfba;
 }
 
 .result-answer {
@@ -233,8 +246,12 @@ hr {
 .correct-answer {
   opacity: 100%;
   background-color: #94D7A2;
-  color: #293264;
+  color: darkgreen;
   border: none;
+}
+
+.correct-answer:hover{
+  background-color: #94D7A2;
 }
 
 .wrong-answer {
@@ -242,15 +259,19 @@ hr {
   border: none
 }
 
+.wrong-answer:hover{
+  background-color: #F8BCBC;
+}
+
 .checkAnswer-button {
   width: 40%;
   padding: 0.7rem 0px;
   font-size: 2rem;
-  border-radius: 30px;
+  border-radius: 50px;
   color: black;
   font-weight: 600;
   border: solid 3px darkgreen;
-  background-color: rgb(30, 172, 125);
+  background-color: #00cc66;
   cursor: pointer;
   margin-left: 30%;
 }
@@ -268,7 +289,7 @@ hr {
   color: black;
   font-weight: 600;
   border: solid 3px darkgreen;
-  background-color: rgb(30, 172, 125);
+  background-color: #00cc66;
   cursor: pointer;
 }
 
